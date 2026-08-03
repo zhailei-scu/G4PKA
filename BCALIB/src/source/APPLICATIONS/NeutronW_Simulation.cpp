@@ -1,6 +1,16 @@
 #include <iostream>
 #include "Randomize.hh"
+
+#include "G4MPImanager.hh"
+#include "G4MPIsession.hh"
+
+#ifdef G4MULTITHREADED
+#include "G4MTRunManager.hh"
+#else
 #include "G4RunManager.hh"
+#endif
+
+
 #include "NWGeometry.h"
 #include "NWActionInitialization.h"
 #include "G4VModularPhysicsList.hh"
@@ -40,6 +50,8 @@ void RunTheSimulation(int EventLoops,double ParticleEnergy) {
 	NWGeometry* myGeometry = new NWGeometry();
 
 	runManager->SetUserInitialization(myGeometry);
+
+	runManager->SetNumberOfThreads()
 
 	G4VModularPhysicsList* physicList = new QGSP_BIC_HP;
 
