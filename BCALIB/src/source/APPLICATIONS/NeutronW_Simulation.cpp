@@ -1,9 +1,6 @@
 #include <iostream>
 #include "Randomize.hh"
 
-#include "G4MPImanager.hh"
-#include "G4MPIsession.hh"
-
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
 #else

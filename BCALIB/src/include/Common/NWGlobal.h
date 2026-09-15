@@ -49,7 +49,7 @@ public:
 
 	NWSimParameters const & GetSimParamters() const;
 
-	void NWGlobal::SetSimParamters(const NWSimParameters &simParamters);
+	void SetSimParamters(const NWSimParameters &simParamters);
 
 public:
 	class NWGlobalGarbo {

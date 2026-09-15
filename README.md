@@ -16,3 +16,13 @@ Email: <zhaileiytp@163.com>  or  <lei.zhai@hfcim.com>  </br>
 
 
 License: MIT License (There are no limitation for anyone to use/modify/sale of this code, be happy to use this code).
+
+
+# Useage
+
+```shell
+git clone https://gitee.com/zhailei-scu/PKASPEC.git
+mkdir PKASPEC_build
+cd PKASPEC_build/
+cmake -S ../PKASPEC/ -DGeant4_DIR=ThePath/geant4-v11.2.0_install/lib/cmake/Geant4/ -DCMake_Install_Prefix=ThePath/PKASPEC_install/
+```
