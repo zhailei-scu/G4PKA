@@ -48,7 +48,7 @@ void RunTheSimulation(int EventLoops,double ParticleEnergy) {
 
 	runManager->SetUserInitialization(myGeometry);
 
-	runManager->SetNumberOfThreads()
+	// runManager->SetNumberOfThreads()
 
 	G4VModularPhysicsList* physicList = new QGSP_BIC_HP;
 

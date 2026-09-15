@@ -20,9 +20,16 @@ License: MIT License (There are no limitation for anyone to use/modify/sale of t
 
 # Useage
 
+## Compile
 ```shell
 git clone https://gitee.com/zhailei-scu/PKASPEC.git
 mkdir PKASPEC_build
 cd PKASPEC_build/
-cmake -S ../PKASPEC/ -DGeant4_DIR=ThePath/geant4-v11.2.0_install/lib/cmake/Geant4/ -DCMake_Install_Prefix=ThePath/PKASPEC_install/
+cmake -S ../PKASPEC/ -DGeant4_DIR=ThePath/geant4-v11.2.0_install/lib/cmake/Geant4/ 
+```
+
+# Run
+```
+source ThePath/geant4-v11.2.0_install/bin/geant4.sh
+PKASPEC_build/BCALIB/BCALIB/APPLICATIONS/NeutronW_Simulation 10000 14.1       # 10000 run , neutron energy = 14.1 MeV
 ```

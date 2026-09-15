@@ -4,15 +4,22 @@ project(BCAPKASpec)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
+set(CMAKE_CUDA_ARCHITECTURES native)
+
 set(LIBNAME CommonGPU)
 
 find_package(CUDA REQUIRED)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
-SET(CMAKE_CXX_FLAGS "-O2 -Wall")
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_75,code=sm_75;-std=c++11;-x=cu)
-set(CUDA_64_BIT_DEVICE_CODE ON)
+# For jetson
+#SET(CMAKE_CXX_FLAGS "-O2 -Wall")
+#set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_75,code=sm_75;-x=cu)
+#set(CUDA_64_BIT_DEVICE_CODE ON)
+
 #set(GENCODE ${GENCODE} -gencode arch=compute_70,code=sm_70)
 #set(GENCODE ${GENCODE} -gencode arch=compute_50,code=sm_50)
 #set(GENCODE ${GENCODE} -gencode arch=compute_35,code=sm_35)

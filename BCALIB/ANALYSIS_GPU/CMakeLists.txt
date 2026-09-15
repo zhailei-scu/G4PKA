@@ -1,12 +1,20 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 project(BCAPKASpec)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
+set(CMAKE_CUDA_ARCHITECTURES native)
+
 find_package(CUDA REQUIRED)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
-SET(CMAKE_CXX_FLAGS "-O2 -Wall")
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_35,code=sm_35;-std=c++11;-x=cu)
+# For jetson
+#SET(CMAKE_CXX_FLAGS "-O2 -Wall")
+#set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_35,code=sm_35;-x=cu)
 #set(GENCODE ${GENCODE} -gencode arch=compute_70,code=sm_70)
 #set(GENCODE ${GENCODE} -gencode arch=compute_50,code=sm_50)
 #set(GENCODE ${GENCODE} -gencode arch=compute_35,code=sm_35)
