@@ -1,12 +1,12 @@
 #include <iostream>
 #include "NWGlobal.h"
-#include "NWAnalysis.h"
+#include "NWAnalysis_PKADistance.h"
 #include "NWSimParameters.h"
 #include <sstream>
 
 void AnalysisTheResult(int argc, char* argv[]) {
 
-	NWAnalysis analysis;
+	NWAnalysis_PKADistance analysis;
 	double ParticleEnergy;
 	stringstream ss;
 
@@ -26,6 +26,9 @@ void AnalysisTheResult(int argc, char* argv[]) {
 	ss << argv[2];
 	ss >> ParticleEnergy;
 
+	stringstream().swap(ss);
+	ss.clear();
+
 	/*Parameters*/
 	NWSimParameters* theSimParemeters = new NWSimParameters();
 
@@ -41,17 +44,15 @@ void AnalysisTheResult(int argc, char* argv[]) {
 
 	NWInfoStore::GetInstance()->ReadEventsInfo(originalDataFilePath);
 
-	std::cout << "Read done..." << std::endl;
+	std::cout << "Read done, execute the new analysis..." << std::endl;
 
 	analysis.AnalysisResult(NWInfoStore::GetInstance()->GetEventsInfo());
 
-	delete theSimParemeters;
-	delete theBeam;
 }
 
 int main(int argc, char* argv[]) {
 
 	AnalysisTheResult(argc, argv);
-	
+
 	return 0;
 }

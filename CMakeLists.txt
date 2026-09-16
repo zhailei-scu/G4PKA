@@ -53,13 +53,13 @@ endforeach()
 
 
 set(UTILLIBS MiniUtilities)
-set(BCALIBS Common)
-set(BCALIBS_GPU CommonGPU)
+set(BCALIBS Common UserActions AnalysisLIB)
+set(BCALIBS_GPU AnalysisLIBGPU)
 set(BCABINS APPLICATIONS ANALYSIS ANALYSIS_GPU)
 
 set(APPS NeutronW_Simulation)
-set(ANALYS NeutronW_Analysis New_NeutronW_Analysis)
-set(ANALYSIS_GPU New_NeutronW_Analysis_GPU)
+set(ANALYS NeutronW_Analysis)
+set(ANALYSIS_GPU NeutronW_Analysis_GPU)
 
 foreach(UTILLIBNAME ${UTILLIBS})
   add_subdirectory(${PROJECT_SOURCE_DIR}/LIB/${UTILLIBNAME})

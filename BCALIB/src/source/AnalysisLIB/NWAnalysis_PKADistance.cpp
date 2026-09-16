@@ -1,4 +1,4 @@
-#include "NWAnalysis_New.h"
+#include "NWAnalysis_PKADistance.h"
 #include "NWGlobal.h"
 #include "stdio.h"
 #include <fstream>
@@ -11,15 +11,15 @@ void New_Cal_MinDist_LinkedCell(std::map<int, std::vector<TrackInfo>>* storedDat
 	fstream* ofsAnalysisPath_DistanceXYZ,fstream* ofsAnalysisPath_ZoneCount, fstream* ofsAnalysisPath_CeilCount);
 
 
-NWAnalysis_New::NWAnalysis_New() {
-
+NWAnalysis_PKADistance::NWAnalysis_PKADistance() {
+	
 }
 
-NWAnalysis_New::~NWAnalysis_New() {
+NWAnalysis_PKADistance::~NWAnalysis_PKADistance() {
 }
 
 
-void NWAnalysis_New::AnalysisResult(std::map<int, std::vector<TrackInfo>>* storedData) {
+void NWAnalysis_PKADistance::AnalysisResult(std::map<int, std::vector<TrackInfo>>* storedData) {
 	std::fstream ofsOrignalDistance;
 	std::fstream ofsAnalysis_EqualInterval;
 	std::fstream ofsAnalysis_PowerInterval;

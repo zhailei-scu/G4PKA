@@ -33,6 +33,8 @@ void RunTheSimulation(int EventLoops,double ParticleEnergy) {
 
 	theSimParemeters->SetBeam(*theBeam);
 
+	theSimParemeters->SetTheConcentReaction(ConcentReaction(InletEstAndInEstTillEnd));
+
 	/*Out Path*/
 	NWGlobal::GetInstance()->InitialGlobal(simMode,*theSimParemeters);
 
