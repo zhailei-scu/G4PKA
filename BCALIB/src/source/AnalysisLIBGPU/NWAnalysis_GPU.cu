@@ -573,7 +573,7 @@ NWAnalysis_GPU::NWAnalysis_GPU() {
 NWAnalysis_GPU::~NWAnalysis_GPU() {
 }
 
-void AnalysisTheResult(int argc, char* argv[]) {
+void AnalysisResult(const int & argc, const char** & argv) {
 	/*Local Vars*/
 	stringstream ss;
 	int deviceCount;

@@ -18,6 +18,8 @@ public:
 
 	virtual ~NWAnalysis();
 
+	virtual void AnalysisResult(const int &, const char** &) = 0;
+
 	virtual void AnalysisResult(std::map<int, std::vector<TrackInfo>>* storedData) = 0;
 
 	NWAnalysis & operator = (const NWAnalysis &);

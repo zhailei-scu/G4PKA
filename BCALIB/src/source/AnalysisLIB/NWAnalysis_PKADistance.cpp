@@ -9,14 +9,9 @@
 #include "NWAnalysis_PKADistance.h"
 #include "NWGlobal.h"
 #include "stdio.h"
-#include <fstream>
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
-
-
-void New_Cal_MinDist_LinkedCell(std::map<int, std::vector<TrackInfo>>* storedData, double boundary[][2],
-	fstream* ofsAnalysisPath_DistanceXYZ,fstream* ofsAnalysisPath_ZoneCount, fstream* ofsAnalysisPath_CeilCount);
 
 
 NWAnalysis_PKADistance::NWAnalysis_PKADistance() {
@@ -28,7 +23,7 @@ NWAnalysis_PKADistance::~NWAnalysis_PKADistance() {
 
 
 
-void AnalysisTheResult(int argc, char* argv[]) {
+void NWAnalysis_PKADistance::AnalysisResult(const int & argc, const char** & argv) {
 
 	NWAnalysis_PKADistance analysis;
 	double ParticleEnergy;
@@ -583,7 +578,7 @@ void NWAnalysis_PKADistance::AnalysisResult(std::map<int, std::vector<TrackInfo>
 
 	}
 
-	New_Cal_MinDist_LinkedCell(storedData, boundary, &ofsAnalysisPath_DistanceXYZ, &ofsAnalysisPath_ZoneCount, &ofsAnalysisPath_CeilXYCount);
+	this->New_Cal_MinDist_LinkedCell(storedData, boundary, &ofsAnalysisPath_DistanceXYZ, &ofsAnalysisPath_ZoneCount, &ofsAnalysisPath_CeilXYCount);
 
 
 	ofsAnalysis_EqualInterval.close();
@@ -612,7 +607,7 @@ void NWAnalysis_PKADistance::AnalysisResult(std::map<int, std::vector<TrackInfo>
 }
 
 
-void New_Cal_MinDist_LinkedCell(std::map<int, std::vector<TrackInfo>>* storedData, double boundary[][2],
+void NWAnalysis_PKADistance::New_Cal_MinDist_LinkedCell(std::map<int, std::vector<TrackInfo>>* storedData, double boundary[][2],
 	fstream* ofsAnalysisPath_DistanceXYZ,fstream* ofsAnalysisPath_ZoneCount, fstream* ofsAnalysisPath_CeilCount) {
 	/*Local Vars*/
 	double ceil_Interval[3];

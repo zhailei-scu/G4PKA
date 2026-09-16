@@ -8,13 +8,22 @@
 
 #include <iostream>
 #include "NWGlobal.h"
+#include "Analysis_MethodFactory.h"
 #include "NWSimParameters.h"
 #include <sstream>
 
 
 int main(int argc, char* argv[]) {
 
-	// AnalysisTheResult(argc, argv);
+	if(argc < 2){
+		std::cerr<<"Error, you must special the method"<<std::endl;
+		exit(-1);
+	}
 
+	std::string methodName = argv[1];
+
+	NWAnalysis* method = Analysis_MethodFactory::getInstance()->GenerateMethod(methodName);
+
+	method->AnalysisResult(argc,(const char** &)argv);
 	return 0;
 }

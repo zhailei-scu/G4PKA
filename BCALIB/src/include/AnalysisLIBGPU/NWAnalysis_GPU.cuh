@@ -28,6 +28,8 @@ public:
 public:
 	~NWAnalysis_GPU();
 
+	void AnalysisResult(const int &, const char** &);
+
 	void AnalysisResult(std::map<int, std::vector<TrackInfo>>* storedData);
 };
 

@@ -85,6 +85,8 @@
         "variant": "cpp"
     },
     "C_Cpp.default.includePath": [  "${workspaceFolder}/**",
+                                    "${workspaceFolder}/*/**",
+                                    "${workspaceFolder}/*/*/**",
                                     "/home/zhl/Development/geant4-v11.2.0/source/*/*",
                                     "/home/zhl/Development/geant4-v11.2.0/source/*/*/*",
                                     "/home/zhl/Development/geant4-v11.2.0/source/*/*/*/*",

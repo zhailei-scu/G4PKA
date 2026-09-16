@@ -16,6 +16,7 @@
 #define MAXLENONELINE 1024
 
 #include "NWAnalysis.h"
+#include <fstream>
 
 
 class NWAnalysis_PKADistance : public NWAnalysis{
@@ -24,7 +25,13 @@ public:
 public:
 	~NWAnalysis_PKADistance();
 
+	void AnalysisResult(const int &, const char** &);
+	
 	void AnalysisResult(std::map<int, std::vector<TrackInfo>>* storedData);
+
+	
+	void New_Cal_MinDist_LinkedCell(std::map<int, std::vector<TrackInfo>>* storedData, double boundary[][2],
+									std::fstream* ofsAnalysisPath_DistanceXYZ,std::fstream* ofsAnalysisPath_ZoneCount, std::fstream* ofsAnalysisPath_CeilCount);
 };
 
 #endif
