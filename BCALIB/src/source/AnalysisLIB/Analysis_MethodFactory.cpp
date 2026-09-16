@@ -11,6 +11,7 @@
 #include "NWAnalysis_DPA.h"
 #include "NWGlobal.h"
 #include <map>
+#include <algorithm>
 
 using namespace std;
 
@@ -43,9 +44,9 @@ void Analysis_MethodFactory::ConstructCollections(){
     std::map<string,AnalysisMethodCreator>().swap(methodCollection);
     methodCollection.clear();
 
-    this->methodRegister(string("PKADistance"),CLASSCREATOR(NWAnalysis_PKADistance));
+    this->methodRegister(string("PKADISTANCE"),CLASSCREATOR(NWAnalysis_PKADistance));
 
-    this->methodRegister(string("DPA"),CLASSCREATOR(NWAnalysis_DPA));
+    // this->methodRegister(string("DPA"),CLASSCREATOR(NWAnalysis_DPA));
 }
 
 Analysis_MethodFactory* Analysis_MethodFactory::getInstance(){
@@ -55,12 +56,22 @@ Analysis_MethodFactory* Analysis_MethodFactory::getInstance(){
 }
 
 NWAnalysis* Analysis_MethodFactory::GenerateMethod(const string & name){
+
+    std::string str(name);
+
+    std::transform(str.begin(),str.end(),str.begin(),::toupper);
+
     if(this->generatedMethod){
         delete this->generatedMethod;
         this->generatedMethod = NULL;
     }
 
-    return (this->generatedMethod = this->methodCollection.find(name)->second());
+    if(this->methodCollection.find(str) == this->methodCollection.end()){
+        std::cout<<"unsupport method Name: "<<name<<std::endl;
+        exit(-1);
+    }
+
+    return (this->generatedMethod = this->methodCollection.find(str)->second());
 }
 
 //garbge clear

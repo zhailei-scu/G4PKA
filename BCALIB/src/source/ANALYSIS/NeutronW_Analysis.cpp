@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
 
 	if(argc < 2){
 		std::cerr<<"Error, you must special the method"<<std::endl;
+		std::cerr<<"Currently, the supported method is: PKADISTANCE"<<std::endl;
 		exit(-1);
 	}
 
