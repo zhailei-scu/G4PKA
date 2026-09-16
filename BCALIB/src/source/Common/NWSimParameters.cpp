@@ -62,7 +62,7 @@ NWSimParameters& NWSimParameters::operator=(const NWSimParameters & r) {
 void NWSimParameters::Clean() {
 
 
-	this->theConcentReaction = ConcentReaction(InletToLastEst);
+	this->theConcentReaction = ConcentReaction(InletEstAndInEstTillEnd);
 
 	this->OutPath.clear();
 	std::string().swap(this->OutPath);
@@ -119,7 +119,7 @@ void NWSimParameters::SetDefulatValue() {
 
 	//-----Change below----
 
-	this->theConcentReaction = ConcentReaction(MatrixAtom);
+	this->theConcentReaction = ConcentReaction(InletEstAndInEstTillEnd);
 
 	this->linkCellInterval_xy = 20 * mm;
 
