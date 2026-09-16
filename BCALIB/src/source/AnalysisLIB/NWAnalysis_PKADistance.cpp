@@ -29,20 +29,20 @@ void NWAnalysis_PKADistance::AnalysisResult(const int & argc, const char** & arg
 	double ParticleEnergy;
 	stringstream ss;
 
-	if (argc < 3) {
+	if (argc < 4) {
 		std::cout << "The argument number is: " << argc << std::endl;
-		std::cout << "You must special the 1) the original file path and particle energy" << std::endl;
+		std::cout << "You must special the 1) the method 2) the original file path 3) particle energy" << std::endl;
 		getchar();
 		exit(1);
 	}
 	std::string originalDataFilePath;
 
-	originalDataFilePath = std::string(argv[1]);
+	originalDataFilePath = std::string(argv[2]);
 
 	stringstream().swap(ss);
 	ss.clear();
 
-	ss << argv[2];
+	ss << argv[3];
 	ss >> ParticleEnergy;
 
 	stringstream().swap(ss);
